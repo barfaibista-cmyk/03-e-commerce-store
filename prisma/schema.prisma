@@ -25,7 +25,7 @@ model Product {
   categoryId  String
   category    Category @relation(fields: [categoryId], references: [id])
 
-  @@index([category])
+  @@index([categoryId])
   @@index([createdAt])
 }
 
@@ -87,13 +87,13 @@ model OrderItem {
 }
 
 model Category {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   name        String
-  slug        String   @unique
+  slug        String    @unique
   description String?
 
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 
   products    Product[]
 }
