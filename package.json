@@ -1,14 +1,21 @@
 {
-  "name": "nextjs-starter",
+  "name": "03-e-commerce-store",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:studio": "prisma studio",
+    "db:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@base-ui/react": "^1.8.0",
     "@clerk/nextjs": "^7.9.7",
     "@hookform/resolvers": "^5.9.1",
     "@prisma/adapter-pg": "^7.10.0",
@@ -29,15 +36,18 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/pg": "^8.15.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
-    "prisma": "^8.0.0-rc.17",
+    "prisma": "^7.10.0",
     "typescript": "^5"
   },
   "allowScripts": {
     "unrs-resolver@1.12.2": true,
-    "esbuild@0.28.2": true
+    "@prisma/engines@7.10.0": true,
+    "esbuild@0.28.2": true,
+    "prisma@7.10.0": true
   }
 }
